@@ -5,8 +5,8 @@ import { log } from "console";
 test("Create Post req testing using static body", async ({ request }) => {
   const postAPIResponse = await request.post(`/booking`, {
     data: {
-      firstname: "Rocky",
-      lastname: "Yadav",
+      firstname: "Rock",
+      lastname: "Y",
       totalprice: 1000,
       depositpaid: true,
       bookingdates: {
@@ -24,8 +24,8 @@ test("Create Post req testing using static body", async ({ request }) => {
   expect(postAPIResponse.ok).toBeTruthy();
   expect(postAPIResponse.status()).toBe(200);
   // validate json api response
-  expect(postAPIResponseBody.booking).toHaveProperty("firstname","Rocky")
-  expect(postAPIResponseBody.booking).toHaveProperty("lastname","Yadav")
+  expect(postAPIResponseBody.booking).toHaveProperty("firstname","Rock")
+  expect(postAPIResponseBody.booking).toHaveProperty("lastname","Y")
   // validate nested json objects
   expect(postAPIResponseBody.booking.bookingdates).toHaveProperty("checkin","2018-01-01");
   expect(postAPIResponseBody.booking.bookingdates).toHaveProperty("checkout","2019-01-01");
